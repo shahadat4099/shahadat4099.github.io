@@ -3,7 +3,7 @@
 
 Welcome! This is the official repository for my personal webpage, published at:
 
-🌐 [https://shahadat.github.io](https://shahadat.github.io)
+🌐 [https://shahadat4099.github.io](https://shahadat4099.github.io)
 
 ---
 
@@ -35,7 +35,7 @@ This site is a living space — I plan to expand it over time to include:
 
 You can visit the live website anytime at:
 
-[https://shahadat.github.io](https://shahadat.github.io)
+[https://shahadat4099.github.io](https://shahadat4099.github.io)
 
 
 
