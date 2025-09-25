@@ -1,92 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="favicon.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Md Shahadat Hossain</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #4facfe, #00f2fe);
-      color: #fff;
-      animation: fadeIn 2s ease;
+      background: #fff;
+      color: #333;
+      text-align: center;
     }
     header {
-      text-align: center;
-      padding: 50px 20px;
+      padding: 40px 20px 20px;
     }
     header h1 {
       font-size: 3em;
       margin: 0;
-      letter-spacing: 2px;
     }
+    header h1 .fname { color: #333; }
+    header h1 .lname { color: #f39c12; }
     header p {
       font-size: 1.2em;
+      color: #555;
       margin-top: 10px;
     }
+    nav {
+      margin: 20px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #f39c12;
+    }
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin: 20px auto;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .icons a {
+      margin: 0 10px;
+      font-size: 22px;
+      color: #333;
+    }
+    .icons a:hover {
+      color: #f39c12;
+    }
     section {
-      background: rgba(0,0,0,0.4);
-      margin: 30px auto;
-      padding: 30px;
-      max-width: 900px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      animation: slideUp 1.5s ease;
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: left;
+      padding: 20px;
+      line-height: 1.6;
     }
     section h2 {
-      border-bottom: 2px solid #fff;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      color: #f39c12;
+      margin-bottom: 15px;
     }
     ul {
-      list-style: none;
-      padding: 0;
+      padding-left: 20px;
     }
-    ul li::before {
-      content: "⭐ ";
-      color: #ffd700;
+    ul li {
+      margin-bottom: 8px;
     }
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      background: rgba(0,0,0,0.2);
+      color: #777;
+      border-top: 1px solid #eee;
     }
     a {
-      color: #ffd700;
+      color: #f39c12;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Md Shahadat Hossain </h1>
-  <p>PhD Student | Bioinformatics | Systems Biology </p>
+  <h1><span class="fname">Md Shahadat</span> <span class="lname">Hossain</span></h1>
+  <p>PhD Student | Bioinformatics | Systems Biology</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <img src="yourphoto.jpg" alt="Md Shahadat Hossain" class="profile-pic">
+  <div class="icons">
+    <a href="mailto:shahadat@bu.edu"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://github.com/shahadat" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href="https://scholar.google.com/citations?user=k357vXMAAAAJ&hl=en" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+    <a href="https://www.researchgate.net/profile/Md-Shahadat-Hossain-8" target="_blank"><i class="fa-brands fa-researchgate"></i></a>
+    <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+  </div>
 </header>
 
-<section>
+<section id="about">
   <h2>About Me</h2>
   <p>
     I’m Md Shahadat Hossain, a PhD student in Bioinformatics at Boston University 
     with an M.Sc. and B.Sc. in Biotechnology and Genetic Engineering from Noakhali Science and Technology University, Bangladesh.
     My research bridges computational biology, genomics, systems biology, and machine learning.
   </p>
+</section>
 
+<section id="research">
   <h2>Research Focus</h2>
   <ul>
     <li>Spatial Transcriptomics, Next-Generation Sequencing (NGS)</li>
@@ -97,27 +132,31 @@
     <li>Bayesian modeling, statistical imputation</li>
     <li>Protein Purification, PCR, qPCR, Western blot, TLC, ELISA, Bacterial & Animal cell culture</li>
   </ul>
+</section>
 
-  <h2>Publications (selected)</h2>
+<section id="publications">
+  <h2>Publications (Selected)</h2>
   <ul>
     <li><a href="https://doi.org/10.1016/j.gene.2024.148965" target="_blank">Distinctive genome features of C. werkmanii strain NIB003</a></li>
-    <li><a href="https://doi.org/10.3390/antiox10010023" target="_blank">Potential Therapeutic Role of Phytochemicals to Mitigate Mitochondrial Dysfunctions in Alzheimer’s Disease.</a></li>
-    <li><a href="https://doi.org/10.3390/biomedicines8110517" target="_blank">Molecular Insights into the Multifunctional Role of Natural Compounds: Autophagy Modulation and Cancer
-        Prevention</a></li>
-
-    
+    <li><a href="https://doi.org/10.3390/antiox10010023" target="_blank">Potential Therapeutic Role of Phytochemicals to Mitigate Mitochondrial Dysfunctions in Alzheimer’s Disease</a></li>
+    <li><a href="https://doi.org/10.3390/biomedicines8110517" target="_blank">Molecular Insights into the Multifunctional Role of Natural Compounds: Autophagy Modulation and Cancer Prevention</a></li>
   </ul>
+</section>
 
+<section id="cv">
+  <h2>CV</h2>
+  <p>You can download my CV <a href="CV.pdf" target="_blank">here</a>.</p>
+</section>
+
+<section id="contact">
   <h2>Contact</h2>
   <p>
-    📧 Email: <a href="mailto:shahadat@bu.edu">shahadat@bu.edu</a><br>
-    🔗 Google Scholar: <a href="https://scholar.google.com/citations?user=k357vXMAAAAJ&hl=en" target="_blank">Google Scholar</a><br>
-    🔗 ResearchGate: <a href="https://www.researchgate.net/profile/Md-Shahadat-Hossain-8" target="_blank">ResearchGate</a>
+    📧 Email: <a href="mailto:shahadat@bu.edu">shahadat@bu.edu</a>
   </p>
 </section>
 
 <footer>
-  &copy; 2024 Md Shahadat Hossain | Powered by GitHub Pages
+  &copy; 2025 Md Shahadat Hossain | Powered by GitHub Pages
 </footer>
 
 </body>
