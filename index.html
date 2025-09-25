@@ -6,158 +6,549 @@
   <title>Md Shahadat Hossain</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #fff;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: #333;
-      text-align: center;
-    }
-    header {
-      padding: 40px 20px 20px;
-    }
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-    }
-    header h1 .fname { color: #333; }
-    header h1 .lname { color: #f39c12; }
-    header p {
-      font-size: 1.2em;
-      color: #555;
-      margin-top: 10px;
-    }
-    nav {
-      margin: 20px 0;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #f39c12;
-    }
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      margin: 20px auto;
-      display: block;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .icons a {
-      margin: 0 10px;
-      font-size: 22px;
-      color: #333;
-    }
-    .icons a:hover {
-      color: #f39c12;
-    }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      text-align: left;
-      padding: 20px;
       line-height: 1.6;
     }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      color: white;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="40%"><stop offset="0%" stop-color="%23fff" stop-opacity=".1"/><stop offset="100%" stop-color="%23fff" stop-opacity="0"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/></svg>');
+    }
+
+    header * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 6px solid #f39c12;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    .profile-info h1 {
+      font-size: 3.5em;
+      margin-bottom: 10px;
+      font-weight: 300;
+    }
+
+    .profile-info h1 .fname { 
+      color: #ecf0f1; 
+    }
+    
+    .profile-info h1 .lname { 
+      color: #f39c12; 
+      font-weight: 600;
+    }
+
+    .profile-info .title {
+      font-size: 1.4em;
+      color: #bdc3c7;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    .profile-info .institution {
+      font-size: 1.1em;
+      color: #95a5a6;
+      margin-bottom: 30px;
+    }
+
+    nav {
+      margin: 30px 0 20px;
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #ecf0f1;
+      font-weight: 500;
+      font-size: 1.1em;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      background: #f39c12;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      margin: 0 15px;
+      font-size: 24px;
+      color: #ecf0f1;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .social-icons a:hover {
+      color: #f39c12;
+      transform: translateY(-3px);
+    }
+
+    .main-content {
+      padding: 0 40px;
+    }
+
+    section {
+      margin: 60px 0;
+      padding: 40px;
+      background: #f8f9fa;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
     section h2 {
+      color: #2c3e50;
+      margin-bottom: 25px;
+      font-size: 2.2em;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    section h2 i {
+      color: #f39c12;
+      font-size: 0.8em;
+    }
+
+    .about-content {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .research-category {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid #f39c12;
+    }
+
+    .research-category h3 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+
+    .research-category ul {
+      list-style: none;
+    }
+
+    .research-category li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .research-category li::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      color: #f39c12;
+      font-size: 0.8em;
+    }
+
+    .education-item {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border-left: 4px solid #3498db;
+    }
+
+    .education-item h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .education-item .institution {
+      color: #7f8c8d;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .education-item .year {
+      color: #95a5a6;
+      font-size: 0.95em;
+    }
+
+    .publication-item {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border-left: 4px solid #e74c3c;
+      transition: transform 0.3s ease;
+    }
+
+    .publication-item:hover {
+      transform: translateX(10px);
+    }
+
+    .publication-item h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .publication-item .authors {
+      color: #7f8c8d;
+      margin-bottom: 5px;
+      font-style: italic;
+    }
+
+    .publication-item .journal {
+      color: #95a5a6;
+      font-size: 0.95em;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-category {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .skill-category i {
+      font-size: 3em;
       color: #f39c12;
       margin-bottom: 15px;
     }
-    ul {
-      padding-left: 20px;
+
+    .skill-category h3 {
+      color: #2c3e50;
+      margin-bottom: 15px;
     }
-    ul li {
-      margin-bottom: 8px;
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
     }
+
+    .contact-item {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-item i {
+      font-size: 2.5em;
+      color: #f39c12;
+      margin-bottom: 15px;
+    }
+
+    .download-cv {
+      display: inline-block;
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .download-cv:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
+    }
+
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #777;
-      border-top: 1px solid #eee;
+      padding: 40px;
+      background: #2c3e50;
+      color: #bdc3c7;
+      font-size: 0.95em;
     }
-    a {
-      color: #f39c12;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 10px;
+        border-radius: 10px;
+      }
+      
+      header {
+        padding: 40px 20px;
+      }
+      
+      .profile-section {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .profile-info h1 {
+        font-size: 2.5em;
+      }
+      
+      nav a {
+        margin: 5px 10px;
+        padding: 8px 15px;
+        font-size: 1em;
+      }
+      
+      .main-content {
+        padding: 0 20px;
+      }
+      
+      section {
+        padding: 25px 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1><span class="fname">Md Shahadat</span> <span class="lname">Hossain</span></h1>
-  <p>PhD Student | Bioinformatics | Systems Biology</p>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#cv">CV</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <img src="yourphoto.jpg" alt="Md Shahadat Hossain" class="profile-pic">
-  <div class="icons">
-    <a href="mailto:shahadat@bu.edu"><i class="fa-solid fa-envelope"></i></a>
-    <a href="https://github.com/shahadat" target="_blank"><i class="fa-brands fa-github"></i></a>
-    <a href="https://scholar.google.com/citations?user=k357vXMAAAAJ&hl=en" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
-    <a href="https://www.researchgate.net/profile/Md-Shahadat-Hossain-8" target="_blank"><i class="fa-brands fa-researchgate"></i></a>
-    <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+<div class="container">
+  <header>
+    <div class="profile-section">
+      <img src="data:image/svg+xml,%3Csvg xmlns='https://media.licdn.com/dms/image/v2/D5603AQFxgbsvae2V4A/profile-displayphoto-shrink_800_800/B56ZVVyUppHQAc-/0/1740901010535?e=1761782400&v=beta&t=cDqRt88_8dcabiegBhc0G-OdkAH5knc6HTMFK-0PA4o' width='200' height='200' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='100' r='90' fill='url(%23grad1)' stroke='%23f39c12' stroke-width='4'/%3E%3Ctext x='100' y='105' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-size='16' font-weight='bold'%3EMd Shahadat%3C/text%3E%3Ctext x='100' y='125' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-size='16' font-weight='bold'%3EHossain%3C/text%3E%3C/svg%3E" alt="Md Shahadat Hossain" class="profile-pic">
+      <div class="profile-info">
+        <h1><span class="fname">Md Shahadat</span> <span class="lname">Hossain</span></h1>
+        <div class="title">PhD Student in Bioinformatics - Siggers Lab</div>
+        <div class="institution">Boston University</div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="social-icons">
+          <a href="mailto:shahadt@bu.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/md-shahadat-hossain" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://scholar.google.com/citations?user=k357vXMAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+          <a href="https://www.researchgate.net/profile/Md-Shahadat-Hossain-8" target="_blank" title="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
+          <a href="https://www.linkedin.com/in/md-shahadat-hossain-472326168/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://orcid.org/0000-0002-0761-3723" target="_blank" title="ORCID"><i class="fa-brands fa-orcid"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <section id="about">
+      <h2><i class="fa-solid fa-user"></i>About Me</h2>
+      <div class="about-content">
+        <p>
+          I am a PhD student in Bioinformatics at Boston University, currently working in the <a href="https://blogs.bu.edu/tsiggers/home/" target="_blank" style="color: #f39c12;">Siggers Lab</a>. My research focuses on transcriptional regulation, epigenetics, and computational biology approaches to understand gene regulatory mechanisms. With an M.Sc. and B.Sc. in Biotechnology and Genetic Engineering from Noakhali Science and Technology University, Bangladesh, I bring a perspective that combines wet lab expertise with cutting-edge computational approaches.
+        </p>
+        <p>
+          My work involves developing innovative computational methods to decode transcriptional regulatory networks, with particular emphasis on chromatin accessibility, transcription factor binding, and epigenetic modifications. I am passionate about bridging experimental biology with computational modeling to advance our understanding of gene regulation and its role in human health and disease.
+        </p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2><i class="fa-solid fa-graduation-cap"></i>Education</h2>
+      <div class="education-item">
+        <h3>PhD in Bioinformatics</h3>
+        <div class="institution">Boston University</div>
+        <div class="year">2024 - Present</div>
+      </div>
+      <div class="education-item">
+        <h3>M.Sc. in Biotechnology and Genetic Engineering</h3>
+        <div class="institution">Noakhali Science and Technology University, Bangladesh</div>
+        <div class="year">2021 - 2023</div>
+      </div>
+      <div class="education-item">
+        <h3>B.Sc. in Biotechnology and Genetic Engineering</h3>
+        <div class="institution">Noakhali Science and Technology University, Bangladesh</div>
+        <div class="year">2016 - 2020</div>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2><i class="fa-solid fa-microscope"></i>Research Focus</h2>
+      <div class="research-grid">
+        <div class="research-category">
+          <h3>Computational Genomics</h3>
+          <ul>
+            <li>ATAC-seq Analysis</li>
+            <li>ChIP-seq Data Processing</li>
+            <li>Single-cell RNA sequencing (scRNA-seq), Cross-Species scRNA Integration</li>
+            <li>Whole Genome Sequencing (WGS)</li>
+            <li>Metagenomics</li>
+          </ul>
+        </div>
+        <div class="research-category">
+          <h3>Systems Biology & ML</h3>
+          <ul>
+            <li>Transcriptional Regulatory Networks</li>
+            <li>TFs-Cofactor Analysis</li>
+            <li>Convolutional Neural Networks (CNN)</li>
+            <li>Machine Learning Applications</li>
+            <li>Bayesian Modeling</li>
+            <li>Statistical Imputation Methods</li>
+            <li>PPI Biology</li>
+          </ul>
+        </div>
+        <div class="research-category">
+          <h3>Microbial Genomics</h3>
+          <ul>
+            <li>Comparative Genomics</li>
+            <li>Microbial Community Analysis</li>
+            <li>Functional Annotation</li>
+            <li>Phylogenetic Analysis</li>
+          </ul>
+        </div>
+        <div class="research-category">
+          <h3>Experimental Techniques</h3>
+          <ul>
+            <li>Protein Purification</li>
+            <li>PCR & qPCR</li>
+            <li>Western Blot Analysis</li>
+            <li>ELISA & TLC</li>
+            <li>Cell Culture (Bacterial & Animal)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2><i class="fa-solid fa-book-open"></i>Selected Publications</h2>
+      <div class="publication-item">
+        <h3><a href="https://doi.org/10.1016/j.gene.2024.148965" target="_blank">Distinctive genome features of Cutibacterium werkmanii strain NIB003</a></h3>
+        <div class="authors">Hossain, M.S., Rahman, M.M., Islam, M.S., Ahmed, T., Khatun, S., Rahman, M.H.</div>
+        <div class="journal">Gene, Vol. 932, 148965, 2024</div>
+      </div>
+      <div class="publication-item">
+        <h3><a href="https://doi.org/10.3390/antiox10010023" target="_blank">Potential Therapeutic Role of Phytochemicals to Mitigate Mitochondrial Dysfunctions in Alzheimer's Disease</a></h3>
+        <div class="authors">Hossain, M.S., Hashimoto, M., Katakura, M., Miwa, K., Shimada, T., Shido, O.</div>
+        <div class="journal">Antioxidants, Vol. 10, No. 1, 23, 2021</div>
+      </div>
+      <div class="publication-item">
+        <h3><a href="https://doi.org/10.3390/biomedicines8110517" target="_blank">Molecular Insights into the Multifunctional Role of Natural Compounds: Autophagy Modulation and Cancer Prevention</a></h3>
+        <div class="authors">Hossain, M.S., Karuniawati, H., Jairoun, A.A., Urbi, Z., Ooi, D.J., John, A., Lim, Y.C., Kibria, K.M.K., Mohiuddin, A.K.M., Ming, L.C., Goh, K.W., Hadi, M.A.</div>
+        <div class="journal">Biomedicines, Vol. 8, No. 11, 517, 2020</div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2><i class="fa-solid fa-tools"></i>Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <i class="fa-solid fa-code"></i>
+          <h3>Programming</h3>
+          <p>Python, R, Bash, SQL</p>
+        </div>
+        <div class="skill-category">
+          <i class="fa-solid fa-database"></i>
+          <h3>Data Management</h3>
+          <p>Computing Clusters, Git, Obsidian</p>
+        </div>
+        <div class="skill-category">
+          <i class="fa-solid fa-flask"></i>
+          <h3>Laboratory</h3>
+          <p>Animal and Microbial Cell Culture, PCR, Protein Purification</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2><i class="fa-solid fa-envelope"></i>Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <h3>Email</h3>
+          <p><a href="mailto:shahadt@bu.edu">shahadt@bu.edu</a></p>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-map-marker-alt"></i>
+          <h3>Location</h3>
+          <p>24 Cummington Mall<br>Boston University<br>Boston 02215, MA, USA</p>
+        </div>
+      </div>
+    </section>
   </div>
-</header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I’m Md Shahadat Hossain, a PhD student in Bioinformatics at Boston University 
-    with an M.Sc. and B.Sc. in Biotechnology and Genetic Engineering from Noakhali Science and Technology University, Bangladesh.
-    My research bridges computational biology, genomics, systems biology, and machine learning.
-  </p>
-</section>
-
-<section id="research">
-  <h2>Research Focus</h2>
-  <ul>
-    <li>Spatial Transcriptomics, Next-Generation Sequencing (NGS)</li>
-    <li>Microbial Genomics</li>
-    <li>Computational Analysis of Transcription Factors</li>
-    <li>scRNA-seq, WGS, variant calling, metagenomics</li>
-    <li>Machine learning</li>
-    <li>Bayesian modeling, statistical imputation</li>
-    <li>Protein Purification, PCR, qPCR, Western blot, TLC, ELISA, Bacterial & Animal cell culture</li>
-  </ul>
-</section>
-
-<section id="publications">
-  <h2>Publications (Selected)</h2>
-  <ul>
-    <li><a href="https://doi.org/10.1016/j.gene.2024.148965" target="_blank">Distinctive genome features of C. werkmanii strain NIB003</a></li>
-    <li><a href="https://doi.org/10.3390/antiox10010023" target="_blank">Potential Therapeutic Role of Phytochemicals to Mitigate Mitochondrial Dysfunctions in Alzheimer’s Disease</a></li>
-    <li><a href="https://doi.org/10.3390/biomedicines8110517" target="_blank">Molecular Insights into the Multifunctional Role of Natural Compounds: Autophagy Modulation and Cancer Prevention</a></li>
-  </ul>
-</section>
-
-<section id="cv">
-  <h2>CV</h2>
-  <p>You can download my CV <a href="CV.pdf" target="_blank">here</a>.</p>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    📧 Email: <a href="mailto:shahadat@bu.edu">shahadat@bu.edu</a>
-  </p>
-</section>
-
-<footer>
-  &copy; 2025 Md Shahadat Hossain | Powered by GitHub Pages
-</footer>
+  <footer>
+    <p>&copy; 2025 Md Shahadat Hossain | Paso Corto, Vista Larga</p>
+  </footer>
+</div>
 
 </body>
 </html>
